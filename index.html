@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sevyn Liu</title>
+  <meta name="description" content="Sevyn (Jiayi) Liu, computer science at Columbia. A hand-drawn map of the fields I work between: math, markets, medicine, product, code and people.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght,BNCE,INFM@0,300..800,-100..100,0..100;1,300..800,-100..100,0..100&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Long+Cang&text=%E5%88%98%E4%BD%B3%E4%BB%AA&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cellipse cx='16' cy='16' rx='12' ry='10' fill='none' stroke='%2322409A' stroke-width='3'/%3E%3Cpath d='M8 26 L24 6' stroke='%2322409A' stroke-width='2.5'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <section class="hero" aria-label="Map of my work">
+      <header class="intro">
+        <h1>
+          <span class="name">Sevyn Liu</span>
+          <span class="name-zh" lang="zh">刘佳仪</span>
+        </h1>
+        <p class="lede">I study computer science at Columbia. Almost everything I build sits between two fields, so here is a map of them.</p>
+        <ul class="how">
+          <li><span class="key key-solid" aria-hidden="true"></span>Click a line to see what I built there.</li>
+          <li><span class="key key-dash" aria-hidden="true"></span>Dashed lines are ones I haven't drawn yet.</li>
+          <li><span class="key key-circle" aria-hidden="true"></span>Drag the circles around if you like.</li>
+        </ul>
+        <button type="button" class="pencil-btn" id="pencil" aria-pressed="false">Draw your own line</button>
+        <nav class="links" aria-label="Contact">
+          <a href="mailto:jl7716@columbia.edu">Email</a>
+          <a href="https://github.com/jiayi61">GitHub</a>
+          <!-- TODO: replace with your LinkedIn URL -->
+          <a href="https://www.linkedin.com/">LinkedIn</a>
+          <!-- TODO: add resume.pdf to the repo root -->
+          <a href="resume.pdf">Résumé</a>
+        </nav>
+        <a class="plain-link" href="#plain">Just want the plain version?</a>
+      </header>
+
+      <div class="map-wrap" id="mapWrap">
+        <svg id="map" role="group" aria-label="Fields and the projects that connect them"></svg>
+        <p class="pencil-hint" id="pencilHint" hidden>Drag from one circle to another.</p>
+        <button type="button" class="cat" id="cat" aria-label="A cat. Click it.">
+          <svg viewBox="0 0 80 70" aria-hidden="true">
+            <path d="M18 64 C 10 50, 12 34, 22 28 L 20 12 L 30 22 C 36 20, 42 20, 48 22 L 58 12 L 56 28 C 66 34, 68 50, 60 64 Z" />
+            <path d="M60 60 C 72 58, 78 48, 72 40" />
+            <path d="M31 38 l2 2 M47 38 l-2 2" />
+            <path d="M37 45 l3 2 l3 -2" />
+            <path d="M24 46 l-12 -2 M24 49 l-12 2 M56 46 l12 -2 M56 49 l12 2" />
+          </svg>
+          <span class="cat-says" id="catSays" role="status"></span>
+        </button>
+      </div>
+    </section>
+
+    <aside class="note" id="note" aria-hidden="true" aria-labelledby="noteTitle" tabindex="-1">
+      <div class="tape" aria-hidden="true"></div>
+      <button type="button" class="note-close" id="noteClose">Close</button>
+      <p class="note-pair" id="notePair"></p>
+      <h2 id="noteTitle"></h2>
+      <p class="note-intro" id="noteIntro"></p>
+      <ul class="note-items" id="noteItems"></ul>
+    </aside>
+
+    <section class="plain" id="plain" aria-labelledby="plainTitle">
+      <div class="page">
+        <h2 id="plainTitle">The plain version</h2>
+
+        <p class="about">I'm Sevyn, a sophomore at Columbia studying computer science with a minor in operations research. I'm drawn to problems where math, computation and real decisions meet, which is how I ended up in trading competitions, a hospital's follow-up system and an MRI research project in the same year. I'm looking at quant trading and research, software, and technical product roles.</p>
+
+        <h3>Education</h3>
+        <ul class="entries">
+          <li><b>Columbia University</b>, B.S. Computer Science, minor in Operations Research <span class="when">class of 2029</span></li>
+          <li><b>Rice University</b>, first year before transferring <span class="when">2025 to 2026</span></li>
+        </ul>
+
+        <h3>Experience and research</h3>
+        <ul class="entries">
+          <li><b>Jane Street</b>, First-Year Trading & Technology Program</li>
+          <li><b>Huatai Zijin Investment</b>, equity research intern</li>
+          <li><b>Breast cancer MRI × AI</b>, predicting response to neoadjuvant chemotherapy; two papers submitted</li>
+          <li><b>Solar physics</b>, published high-school research</li>
+        </ul>
+
+        <h3>Things I've built</h3>
+        <ul class="entries">
+          <li><b>Hemophilia follow-up mini program</b>, with Nanjing Drum Tower Hospital</li>
+          <li><b>Yao'anzhi 药安知</b>, medication conflict checking and dose scheduling</li>
+          <li><b>StreamWell</b>, IEEE OneAquaHealth Global Hackathon</li>
+          <li><b>Probability Cup bot</b>, Jump Trading competition</li>
+          <li><b>南师附中猫协 site</b>, and a ledger app for the cat food money</li>
+        </ul>
+
+        <h3>Honors</h3>
+        <ul class="entries">
+          <li>1st place, Citadel | Citadel Securities Trading Challenge at Columbia <span class="when">2026</span></li>
+          <li>ICPC South Central Regional, Division II champion</li>
+          <li>USAMO qualifier</li>
+          <li>1st Widget Factory, 2nd Estimathon</li>
+        </ul>
+
+        <h3>Say hello</h3>
+        <p class="contact"><a href="mailto:jl7716@columbia.edu">jl7716@columbia.edu</a>. I especially like hearing ideas for the dashed lines.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
