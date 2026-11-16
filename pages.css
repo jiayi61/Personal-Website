@@ -1,0 +1,161 @@
+/* The home, games and photos pages. Paper, ink and fonts come from style.css. */
+
+/* no single word stranded on the last line */
+p, li { text-wrap: pretty; }
+
+/* ---------- Site nav ---------- */
+
+.crumb { display: flex; flex-wrap: wrap; gap: 4px 20px; margin: 0 0 28px; font-size: 16px; }
+.crumb a { color: var(--ink-soft); }
+.crumb a:first-child { color: var(--ink); font-weight: 600; }
+.crumb a[aria-current="page"] {
+  color: var(--ink);
+  text-decoration: none;
+  background: linear-gradient(transparent 58%, color-mix(in srgb, var(--hi) 75%, transparent) 58%);
+}
+
+/* work page: the plain-version link goes under the pencil button */
+.intro .plain-link { display: block; }
+
+/* the "soon" sticker, shared by doors and game cards */
+.soon {
+  position: absolute; top: -13px; right: 16px;
+  padding: 1px 10px;
+  background: var(--hi); color: var(--note-ink);
+  font-size: 13.5px;
+  transform: rotate(3deg);
+}
+
+/* ---------- Home ---------- */
+
+.home { max-width: 900px; margin: 0 auto; padding: 84px 32px 80px; min-height: 100vh; min-height: 100svh; }
+.home .lede { max-width: 44ch; font-size: 20px; margin: 0 0 52px; }
+
+.doors {
+  list-style: none; margin: 0 0 52px; padding: 0;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;
+}
+.door {
+  position: relative; display: block; height: 100%;
+  padding: 22px 22px 20px;
+  color: var(--ink); text-decoration: none;
+  background: var(--paper);
+  border: 2.2px solid var(--ink);
+  border-radius: 255px 18px 225px 18px / 18px 225px 18px 255px;
+  transition: transform .2s, background-color .2s;
+}
+.doors li:nth-child(1) .door { transform: rotate(-1.3deg); }
+.doors li:nth-child(2) .door { transform: rotate(0.9deg); border-radius: 18px 225px 18px 255px / 255px 18px 225px 18px; }
+.doors li:nth-child(3) .door { transform: rotate(-0.6deg); }
+.doors .door:hover, .doors .door:focus-visible {
+  transform: rotate(0) translateY(-3px);
+  background: color-mix(in srgb, var(--hi) 42%, var(--paper));
+  text-decoration: none;
+}
+@media (prefers-reduced-motion: reduce) { .door { transition: none; } }
+
+.door svg { display: block; width: 66px; height: 54px; margin-bottom: 12px; }
+.door svg path, .door svg circle {
+  fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round;
+}
+.door svg .dash { stroke: var(--red); stroke-dasharray: 3 5; stroke-width: 2; }
+.door svg .pip { fill: currentColor; stroke: none; }
+.door h2 {
+  margin: 0 0 4px; font-size: 27px; line-height: 1.2; font-weight: 650;
+  font-variation-settings: "INFM" 90, "BNCE" 20;
+}
+.door p { margin: 0; font-size: 15.5px; line-height: 1.45; color: var(--ink-soft); }
+
+.home .links { font-size: 18px; }
+
+/* ---------- Inner pages ---------- */
+
+.inner { max-width: 1120px; margin: 0 auto; padding: 48px 40px 96px; }
+.inner h1 { margin-bottom: 14px; }
+.inner .lede { max-width: 52ch; font-size: 19px; margin: 0; }
+
+/* ---------- Games ---------- */
+
+.shelf {
+  list-style: none; margin: 44px 0 0; padding: 0;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 30px;
+}
+.cart {
+  position: relative;
+  padding: 24px 26px 22px;
+  border: 2.2px solid var(--ink);
+  border-radius: 18px 225px 18px 255px / 255px 18px 225px 18px;
+  background: var(--paper);
+}
+.cart:nth-child(odd) { transform: rotate(-0.8deg); }
+.cart:nth-child(even) { transform: rotate(0.7deg); }
+.cart.dashed { border-style: dashed; border-color: var(--pencil); color: var(--pencil); }
+.cart h2 {
+  margin: 0 0 8px; font-size: 27px; line-height: 1.2; font-weight: 650;
+  font-variation-settings: "INFM" 90, "BNCE" 20;
+}
+.cart .rules { margin: 0; font-size: 16px; line-height: 1.55; }
+.cart.dashed a { color: var(--ink-soft); }
+
+/* ---------- Photos ---------- */
+
+.gallery { columns: 3 280px; column-gap: 30px; margin-top: 44px; }
+
+.print {
+  break-inside: avoid;
+  margin: 0 0 34px;
+  padding: 10px 10px 12px;
+  background: #FFFEF9;
+  box-shadow: 0 1px 2px rgba(30, 40, 80, .18), 0 12px 24px -14px rgba(30, 40, 80, .45);
+  transform: rotate(var(--tilt, 0deg));
+  transition: transform .2s;
+}
+.print:hover { transform: rotate(0) scale(1.012); }
+@media (prefers-reduced-motion: reduce) { .print { transition: none; } }
+.print button { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; }
+.print img { display: block; width: 100%; height: auto; }
+.print figcaption { padding: 9px 2px 0; color: #2A2A1E; font-size: 15px; line-height: 1.35; }
+.print figcaption b { display: block; font-weight: 600; }
+.print figcaption span { font-size: 13.5px; opacity: .7; }
+
+.empty-note {
+  position: relative;
+  max-width: 380px; margin: 56px 0 0;
+  padding: 34px 30px 28px;
+  background: var(--note); color: var(--note-ink);
+  font-size: 19px;
+  transform: rotate(-1.5deg);
+  box-shadow: 2px 3px 0 rgba(40, 40, 20, .12), 8px 14px 24px -12px rgba(40, 40, 20, .35);
+}
+.empty-note p { margin: 0; }
+.empty-note[hidden] { display: none; }
+
+.lightbox {
+  max-width: min(1200px, 94vw); max-height: 94vh;
+  padding: 0; border: 0; background: transparent; overflow: visible;
+  color: #F3F1EA;
+}
+.lightbox::backdrop { background: rgba(10, 14, 30, .88); }
+.lightbox figure { margin: 0; }
+.lightbox img { display: block; max-width: 94vw; max-height: 84vh; width: auto; height: auto; margin: 0 auto; }
+.lightbox figcaption { padding-top: 10px; text-align: center; font-size: 15.5px; }
+.lb-close, .lb-nav {
+  font: inherit; color: #F3F1EA; background: none; border: 0; cursor: pointer;
+}
+.lb-close { position: fixed; top: 16px; right: 22px; font-size: 16px; text-decoration: underline; }
+.lb-nav { position: fixed; top: 50%; transform: translateY(-50%); font-size: 34px; padding: 10px 16px; }
+.lb-prev { left: 8px; }
+.lb-next { right: 8px; }
+.lb-nav[hidden] { display: none; }
+
+/* ---------- Small screens ---------- */
+
+@media (max-width: 760px) {
+  .home { padding: 40px 18px 60px; }
+  .home .lede { font-size: 18px; margin-bottom: 40px; }
+  .doors { grid-template-columns: 1fr; gap: 22px; }
+  .door { display: grid; grid-template-columns: 66px 1fr; column-gap: 16px; align-items: center; }
+  .door svg { grid-row: span 2; margin: 0; }
+  .inner { padding: 28px 18px 64px; }
+  .inner .name { font-size: 46px; }
+}
