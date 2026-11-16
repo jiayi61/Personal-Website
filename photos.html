@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Photos · Sevyn Liu</title>
+  <meta name="description" content="Photos by Sevyn Liu.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght,BNCE,INFM@0,300..800,-100..100,0..100;1,300..800,-100..100,0..100&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cellipse cx='16' cy='16' rx='12' ry='10' fill='none' stroke='%2322409A' stroke-width='3'/%3E%3Cpath d='M8 26 L24 6' stroke='%2322409A' stroke-width='2.5'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="pages.css">
+</head>
+<body>
+  <main class="inner">
+    <nav class="crumb" aria-label="Site">
+      <a href="./">Sevyn Liu</a>
+      <a href="work.html">Work</a>
+      <a href="games.html">Games</a>
+      <a href="photos.html" aria-current="page">Photos</a>
+    </nav>
+
+    <h1><span class="name">Photos</span></h1>
+    <p class="lede">Things I stopped to look at.</p>
+
+    <div class="gallery" id="gallery"></div>
+
+    <div class="empty-note" id="empty" hidden>
+      <div class="tape" aria-hidden="true"></div>
+      <p>Still developing. Photos coming soon.</p>
+    </div>
+  </main>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Photo">
+    <button type="button" class="lb-close" data-act="close">Close</button>
+    <figure>
+      <img alt="">
+      <figcaption class="lb-cap"></figcaption>
+    </figure>
+    <button type="button" class="lb-nav lb-prev" data-act="prev" aria-label="Previous photo">←</button>
+    <button type="button" class="lb-nav lb-next" data-act="next" aria-label="Next photo">→</button>
+  </dialog>
+
+  <script src="photos.js"></script>
+  <script src="gallery.js"></script>
+</body>
+</html>
